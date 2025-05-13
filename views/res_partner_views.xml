@@ -1,0 +1,32 @@
+<odoo>
+    <!-- Heredar vista de formulario para quitar atributos readonly -->
+    <record id="view_partner_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.form.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Quitar readonly de campos de dirección -->
+            <xpath expr="//field[@name='street']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+            <xpath expr="//field[@name='street2']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+            <xpath expr="//field[@name='zip']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+            <xpath expr="//field[@name='city']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+            <xpath expr="//field[@name='state_id']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="readonly" remove="true"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
